@@ -43,8 +43,6 @@ public class ScientificCalculator {
             userChoice = -1;
             System.out.println("Wrong choice");
             menuDisplay();
-        } finally {
-            input.close();
         }
         return userChoice;
     }
