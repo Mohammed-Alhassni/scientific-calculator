@@ -8,20 +8,16 @@ public class ScientificCalculator {
             int userChoice= menuDisplay();
             switch (userChoice){
                 case 1:
-                    result= add();
-                    System.out.print("The result is: " + result + "\n");
+                    performAddition();
                     break;
                 case 2:
-                    result= subtract();
-                    System.out.print("The result is: " + result + "\n");
+                    performSubtract();
                     break;
                 case 3:
-                    result= multiply();
-                    System.out.print("The result is: " + result + "\n");
+                    performMultiply();
                     break;
                 case 4:
-                    result= divide();
-                    System.out.print("The result is: " + result + "\n");
+                    performDivide();
                     break;
                 case 0:
                     System.out.print("Application terminated \n");
@@ -47,39 +43,67 @@ public class ScientificCalculator {
         return userChoice;
     }
 
-    public static double add(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        double num1= numbersReader.nextDouble();
-        System.out.print("Enter the second number: ");
-        double num2= numbersReader.nextDouble();
-        return num1+num2;
+    public static double add(double num1, double num2){
+        double result = num1 + num2;
+        System.out.print("The result is: " + result + "\n");
+        return result;
     }
 
-     public static double subtract() {
-         Scanner numbersReader = new Scanner(System.in);
-         System.out.print("Enter the first number: ");
-         double num1= numbersReader.nextDouble();
-         System.out.print("Enter the second number: ");
-         double num2= numbersReader.nextDouble();
-         return num1-num2;
-     }
-
-    public static double multiply() {
+    public static double performAddition(){
         Scanner numbersReader = new Scanner(System.in);
         System.out.print("Enter the first number: ");
         double num1= numbersReader.nextDouble();
         System.out.print("Enter the second number: ");
         double num2= numbersReader.nextDouble();
-        return num1*num2;
+        double result= add(num1, num2);
+        return result;
     }
 
-    public static double divide() {
+    public static double subtract(double num1, double num2){
+        double result = num1 - num2;
+        System.out.print("The result is: " + result + "\n");
+        return result;
+    }
+
+    public static double performSubtract(){
         Scanner numbersReader = new Scanner(System.in);
         System.out.print("Enter the first number: ");
         double num1= numbersReader.nextDouble();
         System.out.print("Enter the second number: ");
         double num2= numbersReader.nextDouble();
-        return num1/num2;
+        double result= subtract(num1, num2);
+        return result;
+    }
+
+    public static double multiply(double num1, double num2){
+        double result = num1 * num2;
+        System.out.print("The result is: " + result + "\n");
+        return result;
+    }
+
+    public static double performMultiply(){
+        Scanner numbersReader = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double num1= numbersReader.nextDouble();
+        System.out.print("Enter the second number: ");
+        double num2= numbersReader.nextDouble();
+        double result= multiply(num1, num2);
+        return result;
+    }
+
+    public static double divide(double num1, double num2){
+        double result = num1 / num2;
+        System.out.print("The result is: " + result + "\n");
+        return result;
+    }
+
+    public static double performDivide(){
+        Scanner numbersReader = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double num1= numbersReader.nextDouble();
+        System.out.print("Enter the second number: ");
+        double num2= numbersReader.nextDouble();
+        double result= divide(num1, num2);
+        return result;
     }
 }
