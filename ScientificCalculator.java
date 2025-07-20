@@ -2,30 +2,35 @@ import java.util.Scanner;
 
 public class ScientificCalculator {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        Boolean condition = true;
-        while(condition) {
-            System.out.print("Choose the type of Operation by entering the number: \n 1. Add \n 2. exit \n ");
-            int userChoice = input.nextInt();
-            double result;
+        while(true) {
+            int userChoice= menuDisplay();
             switch (userChoice){
                 case 1:
-                    System.out.print("Enter the first number: ");
-                    double num1= input.nextDouble();
-                    System.out.print("Enter the second number: ");
-                    double num2= input.nextDouble();
-                    result= add(num1, num2);
+                    double result= add();
                     System.out.print("The result is: " + result + "\n");
                     break;
                 case 2:
-                    condition = false;
-                    System.out.print("Application terminated");
+                    System.out.print("Application terminated \n");
                     break;
+                default:
+                    System.out.println("Wrong choice");
             }
         }
     }
 
-    public static double add(double num1, double num2){
+    public static int menuDisplay(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Choose the type of Operation by entering the number: \n 1. Add \n 2. exit \n ");
+        int userChoice = input.nextInt();
+        return userChoice;
+    }
+
+    public static double add(){
+        Scanner numbersReader = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double num1= numbersReader.nextDouble();
+        System.out.print("Enter the second number: ");
+        double num2= numbersReader.nextDouble();
         return num1+num2;
     }
 }
