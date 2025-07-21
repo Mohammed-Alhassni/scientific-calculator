@@ -59,12 +59,19 @@ public class ScientificCalculator {
     }
 
     private static double performAddition(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        double num1= numbersReader.nextDouble();
-        System.out.print("Enter the second number: ");
-        double num2= numbersReader.nextDouble();
-        double result= add(num1, num2);
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the first number: ");
+            double num1= numbersReader.nextDouble();
+            System.out.print("Enter the second number: ");
+            double num2= numbersReader.nextDouble();
+            result= add(num1, num2);
+        } catch (Exception e) {
+            System.out.println("Valid numbers sould be entered!");
+            result = 0;
+            performAddition();
+        }
         return result;
     }
 
@@ -147,7 +154,7 @@ public class ScientificCalculator {
     }
 
     public static double sine(double degree) {
-        double result = Math.sin(degree);
+        double result = Math.sin(Math.toRadians(degree));
         System.out.print("The result is: " + result + "\n");
         return result;
     }
