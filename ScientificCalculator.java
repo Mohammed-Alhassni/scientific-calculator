@@ -28,6 +28,12 @@ public class ScientificCalculator {
                 case 7:
                     performSine();
                     break;
+                case 8:
+                    performCosine();
+                    break;
+                case 9:
+                    performTanget();
+                    break;
                 case 0:
                     System.out.print("Application terminated \n");
                     isContinued= false;
@@ -42,7 +48,7 @@ public class ScientificCalculator {
         Scanner input = new Scanner(System.in);
         int userChoice;
         try{
-            System.out.print("Choose the type of Operation by entering the number: \n 1. Add \n 2. Subtract \n 3. Multiply \n 4. Divide \n 5. Calculate Square Root \n 6. Calculate Power \n 7. Calculate Sine \n enter 0 to exit \n ");
+            System.out.print("Choose the type of Operation by entering the number: \n 1. Add \n 2. Subtract \n 3. Multiply \n 4. Divide \n 5. Calculate Square Root \n 6. Calculate Power \n 7. Calculate Sine \n 8. Calculate Cosine \n 9. Calculate Tanget  \n enter 0 to exit \n ");
             userChoice = input.nextInt();
         } catch (Exception e) {
             userChoice = -1;
@@ -205,6 +211,48 @@ public class ScientificCalculator {
             System.out.println("Valid numbers should be entered!");
             result = 0;
             performSine();
+        }
+        return result;
+    }
+
+    public static double cosine(double degree) {
+        double result = Math.cos(Math.toRadians(degree));
+        System.out.print("The result is: " + result + "\n");
+        return result;
+    }
+
+    private static double performCosine(){
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the number in degrees: ");
+            double degree= numbersReader.nextDouble();
+            result= cosine(degree);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performCosine();
+        }
+        return result;
+    }
+
+    public static double tanget(double degree) {
+        double result = Math.tan(Math.toRadians(degree));
+        System.out.print("The result is: " + result + "\n");
+        return result;
+    }
+
+    private static double performTanget(){
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the number in degrees: ");
+            double degree= numbersReader.nextDouble();
+            result= tanget(degree);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performTanget();
         }
         return result;
     }
