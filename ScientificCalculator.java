@@ -68,7 +68,7 @@ public class ScientificCalculator {
             double num2= numbersReader.nextDouble();
             result= add(num1, num2);
         } catch (Exception e) {
-            System.out.println("Valid numbers sould be entered!");
+            System.out.println("Valid numbers should be entered!");
             result = 0;
             performAddition();
         }
@@ -81,13 +81,20 @@ public class ScientificCalculator {
         return result;
     }
 
-    private static double performSubtract(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        double num1= numbersReader.nextDouble();
-        System.out.print("Enter the second number: ");
-        double num2= numbersReader.nextDouble();
-        double result= subtract(num1, num2);
+    private static double performSubtract() {
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the first number: ");
+            double num1 = numbersReader.nextDouble();
+            System.out.print("Enter the second number: ");
+            double num2 = numbersReader.nextDouble();
+            result = subtract(num1, num2);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performSubtract();
+        }
         return result;
     }
 
@@ -98,12 +105,19 @@ public class ScientificCalculator {
     }
 
     private static double performMultiply(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        double num1= numbersReader.nextDouble();
-        System.out.print("Enter the second number: ");
-        double num2= numbersReader.nextDouble();
-        double result= multiply(num1, num2);
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the first number: ");
+            double num1 = numbersReader.nextDouble();
+            System.out.print("Enter the second number: ");
+            double num2 = numbersReader.nextDouble();
+            result = multiply(num1, num2);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performMultiply();
+        }
         return result;
     }
 
@@ -114,12 +128,19 @@ public class ScientificCalculator {
     }
 
     private static double performDivide(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        double num1= numbersReader.nextDouble();
-        System.out.print("Enter the second number: ");
-        double num2= numbersReader.nextDouble();
-        double result= divide(num1, num2);
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the first number: ");
+            double num1 = numbersReader.nextDouble();
+            System.out.print("Enter the second number: ");
+            double num2 = numbersReader.nextDouble();
+            result = divide(num1, num2);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performDivide();
+        }
         return result;
     }
 
@@ -130,10 +151,17 @@ public class ScientificCalculator {
      }
 
     private static double performSquareRoot(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the number: ");
-        double num= numbersReader.nextDouble();
-        double result= squareRoot(num);
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the number: ");
+            double num = numbersReader.nextDouble();
+            result= squareRoot(num);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performSquareRoot();
+        }
         return result;
     }
 
@@ -144,12 +172,19 @@ public class ScientificCalculator {
     }
 
     private static double performPower(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the base number: ");
-        double base= numbersReader.nextDouble();
-        System.out.print("Enter the exponent number: ");
-        double exponent= numbersReader.nextDouble();
-        double result= power(base, exponent);
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the base number: ");
+            double base= numbersReader.nextDouble();
+            System.out.print("Enter the exponent number: ");
+            double exponent= numbersReader.nextDouble();
+            result = power(base, exponent);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performPower();
+        }
         return result;
     }
 
@@ -160,10 +195,17 @@ public class ScientificCalculator {
     }
 
     private static double performSine(){
-        Scanner numbersReader = new Scanner(System.in);
-        System.out.print("Enter the number in degrees: ");
-        double degree= numbersReader.nextDouble();
-        double result= sine(degree);
+        double result;
+        try {
+            Scanner numbersReader = new Scanner(System.in);
+            System.out.print("Enter the number in degrees: ");
+            double degree= numbersReader.nextDouble();
+            result= sine(degree);
+        } catch (Exception e) {
+            System.out.println("Valid numbers should be entered!");
+            result = 0;
+            performSine();
+        }
         return result;
     }
 }
